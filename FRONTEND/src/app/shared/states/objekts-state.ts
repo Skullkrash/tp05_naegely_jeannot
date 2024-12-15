@@ -30,7 +30,19 @@ export class ObjektState {
       { payload }: AddObjekt
     ) {
     let state = getState();
-    patchState({ objekts: [...state.objekts, payload] });
+    let existsInCart: boolean = false;
+    state.objekts.forEach(objekt => { if (objekt.name == payload.name) existsInCart = true });
+    if (existsInCart) {
+      patchState({ objekts : state.objekts.map(objekt => {
+        if (objekt.name == payload.name) {
+          objekt.numberToBuy += 1;
+        }
+        return objekt;
+      })});
+    }
+    else {
+      patchState({ objekts : [...state.objekts, payload] });
+    }
   }
 
   @Action(DelObjekt)
@@ -38,9 +50,19 @@ export class ObjektState {
     { getState, patchState }: StateContext<ObjektStateModel>,
     { payload }: DelObjekt
   ) {
-    const state = getState().objekts;
-    patchState({ objekts: state.filter(
-      objekt => !(payload.name == objekt.name)
-    ) });
+    const state = getState();
+    if (payload.numberToBuy > 1) {
+      patchState({ objekts : state.objekts.map(objekt => {
+        if (objekt.name == payload.name) {
+          objekt.numberToBuy -= 1;
+        }
+        return objekt;
+      })});
+    }
+    else {
+      patchState({ objekts: state.objekts.filter(
+        objekt => !(payload.name == objekt.name)
+      ) });
+    }
   }
 }

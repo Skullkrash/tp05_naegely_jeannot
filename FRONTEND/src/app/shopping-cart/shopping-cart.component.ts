@@ -23,7 +23,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
         .subscribe(result => {
           this.Objekts = result;
           this.totalPrice = 0;
-          this.Objekts.forEach(objekt => this.totalPrice += objekt.unitPrice);
+          this.Objekts.forEach(objekt => this.totalPrice += (objekt.unitPrice * objekt.numberToBuy));
         });
   }
 

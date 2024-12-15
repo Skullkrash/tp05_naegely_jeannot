@@ -1,4 +1,5 @@
 export interface Objekt {
   name: string,
-  unitPrice: number
+  unitPrice: number,
+  numberToBuy: number
 }

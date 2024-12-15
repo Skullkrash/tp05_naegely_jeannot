@@ -1,7 +1,7 @@
 <h2>Objekts</h2>
 
 <div class="objekt-list">
-  @for (objekt of displayedObjekts; track $index) {
+  @for (objekt of displayedObjekts; track objekt.name) {
   <div class="objekt">
     <div class="objekt-name">{{ objekt.name }}</div>
     <div class="objekt-price">Price - {{ objekt.unitPrice }} €</div>

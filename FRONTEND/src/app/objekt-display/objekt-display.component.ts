@@ -12,23 +12,28 @@ export class ObjektDisplayComponent implements OnInit {
   displayedObjekts: Objekt[] = [
     {
       name: "A better C++ teacher",
-      unitPrice: 50000
+      unitPrice: 50000,
+      numberToBuy: 1
     },
     {
       name: "Kitty cat treats",
-      unitPrice: 3
+      unitPrice: 3,
+      numberToBuy: 1
     },
     {
       name: "A single banana",
-      unitPrice: 15
+      unitPrice: 15,
+      numberToBuy: 1
     },
     {
       name: "Le pouler de pouler.fr",
-      unitPrice: NaN
+      unitPrice: NaN,
+      numberToBuy: 1
     },
     {
       name: "More style for this page",
-      unitPrice: 500
+      unitPrice: 500,
+      numberToBuy: 1
     }
   ]
 
