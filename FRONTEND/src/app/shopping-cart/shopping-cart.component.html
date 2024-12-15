@@ -1,1 +1,13 @@
-<p>shopping-cart works!</p>
+<h2>Cart</h2>
+
+<div class="objekt-list">
+@for (objekt of Objekts; track $index) {
+  <div class="objekt">
+    <div class="objekt-name">{{ objekt.name }}</div>
+    <div class="objekt-price">Price - {{ objekt.unitPrice }}</div>
+    <button class="objekt-add-to-cart" (click)="removeObjekt(objekt)"> Remove from cart</button>
+  </div>
+}
+</div>
+
+<div>Total cart price : {{ totalPrice }}</div>

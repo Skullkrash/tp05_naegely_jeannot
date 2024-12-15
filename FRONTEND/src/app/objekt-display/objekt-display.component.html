@@ -1,1 +1,11 @@
-<p>objekt-display works!</p>
+<h2>Objekts</h2>
+
+<div class="objekt-list">
+  @for (objekt of displayedObjekts; track $index) {
+  <div class="objekt">
+    <div class="objekt-name">{{ objekt.name }}</div>
+    <div class="objekt-price">Price - {{ objekt.unitPrice }} €</div>
+    <button class="objekt-add-to-cart" (click)="addObjekt(objekt)"> Add to cart</button>
+  </div>
+  }
+</div>

@@ -1,1 +1,6 @@
-<p>tetiere works!</p>
+<div class="tetiere">
+  <button class="objekts" routerLink="/objekts">Objekts</button>
+  <a routerLink="/cart" [matBadge]="nb$ | async" matBadgeColor="warn">
+    <mat-icon>shopping_cart</mat-icon>
+  </a>
+</div>

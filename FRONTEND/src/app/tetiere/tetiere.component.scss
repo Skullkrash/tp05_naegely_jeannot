@@ -1,0 +1,16 @@
+.tetiere {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:flex-start;
+  align-items: center;
+  gap: 16px;
+
+  .objekts {
+    border-radius: 5%;
+  }
+
+  .cart {
+    border-radius: 50%;
+  }
+}
